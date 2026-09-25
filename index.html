@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For My Love ❤️</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #000;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            position: relative;
+        }
+
+        .hero img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #ff4d6d;
+            box-shadow: 0 0 30px #ff4d6d;
+        }
+
+        .small-text {
+            margin-top: 25px;
+            color: #aaa;
+        }
+
+        h1 {
+            font-size: 60px;
+            color: #ff4d6d;
+            margin: 15px 0;
+        }
+
+        .hero p {
+            max-width: 600px;
+            font-size: 19px;
+            line-height: 1.6;
+            color: #ddd;
+        }
+
+        button {
+            margin-top: 25px;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 30px;
+            background: #ff4d6d;
+            color: white;
+            font-size: 17px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            background: #ff758f;
+        }
+
+        /* ================= HEARTS ================= */
+
+        .heart {
+            position: fixed;
+            bottom: -30px;
+            font-size: 25px;
+            animation: floatHeart 6s linear forwards;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-110vh) scale(1.8);
+                opacity: 0;
+            }
+        }
+
+        /* ================= SECTIONS ================= */
+
+        section {
+            padding: 90px 25px;
+        }
+
+        h2 {
+            color: #ff4d6d;
+            font-size: 40px;
+            margin-bottom: 40px;
+        }
+
+        /* ================= FAVORITES ================= */
+
+        .cards {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 20px;
+            padding: 30px;
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #ff4d6d;
+            box-shadow: 0 0 20px rgba(255, 77, 109, .3);
+        }
+
+        .emoji {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #aaa;
+        }
+
+        /* ================= LOVE LETTER ================= */
+
+        .letter {
+            max-width: 750px;
+            margin: auto;
+            background: #111;
+            padding: 45px;
+            border-radius: 25px;
+            border: 1px solid #333;
+            line-height: 1.8;
+        }
+
+        .letter p {
+            color: #ddd;
+            font-size: 18px;
+        }
+
+        .signature {
+            margin-top: 30px;
+            color: #ff4d6d !important;
+            font-size: 24px !important;
+        }
+
+        /* ================= PHOTO GALLERY ================= */
+
+        .gallery {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: .3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.03);
+        }
+
+        /* ================= SURPRISE ================= */
+
+        .surprise {
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #secret {
+            display: none;
+            margin-top: 40px;
+            animation: pop .7s ease;
+        }
+
+        #secret h3 {
+            font-size: 70px;
+            color: #ff4d6d;
+            text-shadow: 0 0 30px #ff4d6d;
+        }
+
+        #secret p {
+            margin-top: 15px;
+            font-size: 22px;
+            color: #ddd;
+        }
+
+        @keyframes pop {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* ================= MUSIC ================= */
+
+        .music {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 20;
+        }
+
+        .music button {
+            margin: 0;
+            padding: 12px 18px;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            padding: 30px;
+            color: #666;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 700px) {
+
+            h1 {
+                font-size: 40px;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery img {
+                height: 350px;
+            }
+
+            .letter {
+                padding: 25px;
+            }
+
+            #secret h3 {
+                font-size: 45px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= MUSIC ================= -->
+
+    <audio id="music" loop>
+        <source src="music.mp3.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="music">
+        <button onclick="toggleMusic()" id="musicButton">
+            🎵 Play Music
+        </button>
+    </div>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <!-- Replace this with her picture -->
+        <img src="her.photo.jpg.jpg" alt="My Love">
+
+        <p class="small-text">
+            A little website made specially for
+        </p>
+
+        <!-- CHANGE HER NAME HERE -->
+        <h1>VALENTINA NEREA ❤️</h1>
+
+        <p>
+            You are one of the most special human in my life,
+            and I wanted to make something cute just for you.
+        </p>
+
+        <button onclick="document.getElementById('letter').scrollIntoView()">
+            Open My Heart 💌
+        </button>
+
+    </section>
+
+
+    <!-- ================= FAVORITES ================= -->
+
+    <section>
+
+        <h2>Things You Love 🖤</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="emoji">🐶</div>
+                <h3>Snoopy</h3>
+                <p>In this big world, you're my favorite place to be.</p>
+            </div>
+
+            <div class="card">
+                <div class="emoji">🐒</div>
+                <h3>Monkeys</h3>
+                <p>I love you more than monkeys love bananas.</p>
+            </div>
+
+            <div class="card">
+                <div class="emoji">🐱</div>
+                <h3>Cats</h3>
+                <p>My favorite human has a soft spot for cats.</p>
+            </div>
+
+            <div class="card">
+                <div class="emoji">🟡</div>
+                <h3>Minions</h3>
+                <p>You make my heart say Bananaaaa! 🍌</p>
+            </div>
+
+            <div class="card">
+                <div class="emoji">🕷️</div>
+                <h3>Spider-Man</h3>
+                <p>I'd choose you in every universe.</p>
+            </div>
+
+            <div class="card">
+                <div class="emoji">🍮</div>
+                <h3>Leche Flan</h3>
+                <p>No dessert could ever be as sweet as you.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= LOVE LETTER ================= -->
+
+    <section id="letter">
+
+        <h2>A Letter For You 💌</h2>
+
+        <div class="letter">
+
+            <p>
+                Dear Mi Amor,
+            </p>
+
+            <br>
+
+            <p>
+                I made this little website because I wanted to
+                create something special for you.
+            </p>
+
+            <br>
+
+            <p>
+                You make my ordinary days feel more special.
+                Thank you for being yourself, for making me smile,
+                and for being someone I can always treasure.
+            </p>
+
+            <br>
+
+            <p>
+                I may not always know the perfect words to say,
+                but I hope you always remember how important
+                you are to me.
+            </p>
+
+            <p class="signature">
+                I love you always. ❤️
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= GALLERY ================= -->
+
+    <section>
+
+        <h2>Mi Amor 📸</h2>
+
+        <div class="gallery">
+
+            <!-- Replace these pictures -->
+            <img src="photo1.jpg.jpg" alt="Mi Amor">
+            <img src="photo2.jpg.jpg" alt="Mi Amor">
+            <img src="photo3.jpg.jpg" alt="Mi Amor">
+            <img src ="photo4.jpg.jpg" alt="Mi Amor">
+            <img src="photo5.jpg.jpg" alt="Mi Amor">
+            <img src="photo6.jpg.jpg" alt=" Mi Amor">
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SURPRISE ================= -->
+
+    <section class="surprise">
+
+        <h2>One Last Thing... 👀</h2>
+
+        <p>
+            I have a little surprise for you.
+        </p>
+
+        <button onclick="showLove()">
+            Don't Click This ❤️
+        </button>
+
+        <div id="secret">
+
+            <h3>I LOVE YOU ❤️</h3>
+
+            <p>
+                More than words can explain. 🥺
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+        Made with ❤️ especially for you.
+    </footer>
+
+
+    <script>
+
+        /* MUSIC */
+
+        const music = document.getElementById("music");
+        const musicButton = document.getElementById("musicButton");
+
+        function toggleMusic() {
+
+            if (music.paused) {
+
+                music.play();
+
+                musicButton.innerHTML = "⏸️ Pause Music";
+
+            } else {
+
+                music.pause();
+
+                musicButton.innerHTML = "🎵 Play Music";
+
+            }
+        }
+
+
+        /* SURPRISE */
+
+        function showLove() {
+
+            document.getElementById("secret").style.display = "block";
+
+            createHearts();
+
+        }
+
+
+        /* FLOATING HEARTS */
+
+        function createHearts() {
+
+            for (let i = 0; i < 20; i++) {
+
+                const heart = document.createElement("div");
+
+                heart.classList.add("heart");
+
+                heart.innerHTML = "❤️";
+
+                heart.style.left =
+                    Math.random() * 100 + "vw";
+
+                heart.style.animationDuration =
+                    (Math.random() * 3 + 3) + "s";
+
+                document.body.appendChild(heart);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 6000);
+            }
+        }
+
+    </script>
+
+</body>
+</html>
